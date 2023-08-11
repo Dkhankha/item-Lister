@@ -87,6 +87,20 @@ function showUsers(obj){
         localStorage.removeItem(obj.email)
         parentElem.removeChild(childelem)
     }
+    let editbutton=document.createElement('input')
+    editbutton.type='button'
+    editbutton.value='Edit'
+    editbutton.onclick=()=>{
+        localStorage.removeItem(obj.email)
+        parentElem.removeChild(childelem)
+        document.getElementById('name').value=obj.name
+        document.getElementById('email').value=obj.email
+
+    }
+
+
+
     childelem.appendChild(deletebutton)
+    childelem.appendChild(editbutton)
     parentElem.appendChild(childelem)
 }
